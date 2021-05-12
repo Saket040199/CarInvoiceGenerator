@@ -15,4 +15,13 @@ public class InvoiceServiceTest {
 		Assert.assertEquals(25, fare,0.0); //0.0 is delta for double function
 	}
 	
+	@Test
+	public void givenLessDistanceAndTime_ShouldReturnTheMinimumFare() {
+		InvoiceGenerator invoicegenerator=new InvoiceGenerator();
+		double distance=0.1;
+		int time=1;
+		double fare=invoicegenerator.calculateFare(distance,time);
+		System.out.println("Fare is : " +fare +"rs");
+		Assert.assertEquals(5, fare,0.0); //0.0 is delta for double function
+	}
 }
