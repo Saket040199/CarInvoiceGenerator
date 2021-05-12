@@ -24,4 +24,17 @@ public class InvoiceServiceTest {
 		System.out.println("Fare is : " +fare +"rs");
 		Assert.assertEquals(5, fare,0.0); //0.0 is delta for double function
 	}
+	
+	@Test
+	public void givenMultipleRides_ShouldReturnTotalFare() {
+		InvoiceGenerator invoicegenerator=new InvoiceGenerator();
+		Ride[] rides= { new Ride(2.0,5),
+		                new Ride(0.1,1)
+		};
+		
+		double fare=invoicegenerator.calculateFare(rides);
+		System.out.println("Total Fare of rides is : "+fare);
+		Assert.assertEquals(30, fare,0.0);
+	}
+	
 }
