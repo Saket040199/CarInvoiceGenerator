@@ -19,7 +19,7 @@ public class InvoiceService {
     	InvoiceSummary invoiceSummary=null;
         for (RideRepository userRides : repository) {
             if (userRides.id == id) {
-                invoiceSummary = new InvoiceGenerator().getInvoiceSummary(userRides.rides);
+                invoiceSummary = new InvoiceGenerator().calculateFare(userRides.rides);
             }
         }
     	
